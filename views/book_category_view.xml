@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="book_category" name="Quản Lí Sách" sequence="1"/>
+
+        <record id="book_category_act" model="ir.actions.act_window">
+            <field name="name">Thể Loại Sách</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">book.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="book_category_form" model="ir.ui.view">
+            <field name="name">Thể Loại Sách</field>
+            <field name="model">book.category</field>
+            <field name="arch" type="xml">
+                <form string="Thể loại sách">
+                    <sheet>
+                        <group>
+                            <field name="name_category"/>
+                            <field name="desc"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="book_category_tree" model="ir.ui.view">
+            <field name="name">Thể Loại Sách</field>
+            <field name="model">book.category</field>
+            <field name="arch" type="xml">
+                <tree string="Thể Loại Sách">
+                    <field name="name_category"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="book_categ_menu" name="Thể loại sách" parent="book_category" action="book_category_act"
+                  sequence="3"/>
+    </data>
+</odoo>
